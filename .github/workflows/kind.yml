@@ -11,4 +11,4 @@ jobs:
       - name: Create annotation for build error
         run: echo "Hello, World"
       - name: Create annotation for build error
-        run: ls
+        run: kubectl get pods
