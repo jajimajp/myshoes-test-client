@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: shoes-lxd-multi
+spec:
+  containers:
+  - name: shoes-lxd-multi
+    image: ghcr.io/whywaita/shoes-lxd-multi:sha-65ac707
+    env:
+    - name: LXD_MULTI_HOSTS
+      value: "[]"

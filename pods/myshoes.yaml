@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myshoes
+  labels:
+    app: myshoes
+spec:
+  containers:
+  - name: myshoes
+    image: ghcr.io/whywaita/myshoes:v1.15.5@sha256:8412ed532c4d62ee9f26dd5ad0a9cd68e1dd1331e9f711ceaacfd2be79b02d1d
+    env:
+    - name: GITHUB_APP_ID
+      value: "$GITHUB_APP_ID"
+    - name: GITHUB_APP_SECRET
+      value: "$GITHUB_APP_SECRET"
+    - name: GITHUB_PRIVATE_KEY_BASE64
+      value: $GITHUB_PRIVATE_KEY_BASE64
+    - name: MYSQL_URL
+      value: root:password@tcp(mysql-service.default.svc.cluster.local:3306)/myshoes
+    - name: PLUGIN
+      value: https://github.com/cycloud-io/shoes-label-router/releases/download/v0.0.13-rc2/shoes-label-router_linux_amd64
+    - name: LXD_MULTI_TARGET_HOSTS
+      value: "[]"

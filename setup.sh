@@ -1,5 +1,4 @@
-echo 'start setup'
-mkdir init.db/
-cd init.db
-curl -o schema.sql https://raw.githubusercontent.com/whywaita/myshoes/master/pkg/datastore/mysql/schema.sql
-head schema.sql
+kubectl apply -f services
+kubectl apply -f pods/mysql.yaml
+kubectl apply -f pods/shoes-lxd-multi.yaml
+envsubst < pods/myshoes.yaml | kubectl apply -f -
