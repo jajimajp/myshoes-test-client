@@ -19,3 +19,5 @@ jobs:
         run: chmod +x ./setup.sh
       - name: Setup cluster
         run: ./setup.sh
+      - name: Test request
+        run: curl localhost:30000/target
