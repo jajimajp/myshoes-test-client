@@ -6,7 +6,7 @@ jobs:
     steps:
 
     - name: Setup LXD
-      uses: canonical/setup-lxd@[version]
+      uses: canonical/setup-lxd@0.1.1
       with:
         channel: latest/stable  # switch from distro's LTS channel to latest/stable
 
